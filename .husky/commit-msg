@@ -1,0 +1,30 @@
+# npx --no -- commitlint --edit "$1"
+message="$(cat $1)"
+
+requiredEmojis="^(:bug:|🐛|:rotating_light:|🚨|:zap:|⚡️|:pencil2:|✏️|:recycle:|♻️|:sparkles:|✨|:wastebasket:|🗑️|:package:|📦️|:art:|🎨|:construction:|🚧|:white_check_mark:|✅|:memo:|📝|:rocket:|🚀|:arrow_up:|⬆️|:arrow_down:|⬇️|:twisted_rightwards_arrows:|🔀)"
+if ! [[ $message =~ $requiredEmojis ]];
+then
+  echo "❌ Wrong commit message! 😕"
+  echo "❌ The commit message must have this format:"
+  echo "🚨 <emoji> <commit-message>"
+  echo "❗️Allowed emojis and their descriptions:"
+  echo "  🐛 - Fix a bug
+  🚨 - Critical hotfix
+  ⚡️ - Performance improvement
+  ✏️ - Update/Fix typo
+  ♻️ - Refactor code
+  ✨ - Introduce new features
+  🗑️ - Deprecate code that needs to be cleaned up
+  📦️ - Add or update compiled files or packages
+  🎨 - Add or update the UI and styles
+  🚧 - Work in progress (NOT READY)
+  ✅ - Add/Update tests (or any related change to testing infrastructure)
+  📝 - Add/Update documentation or release notes
+  🚀 - Deploy stuff/release
+  ⬆️ - Upgrade dependencies
+  ⬇️ - Downgrade dependencies"
+  echo "❌ Example: :sparkles: Add new feature"
+  echo "❌ Your commit message was:"
+  echo "$message"
+  exit 1
+fi
