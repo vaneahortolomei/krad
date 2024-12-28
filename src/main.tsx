@@ -1,15 +1,17 @@
 import React from 'react';
-import '@mantine/core/styles.css';
 import ReactDOM from 'react-dom/client';
+import { RouterProvider } from 'react-router-dom';
 import { MantineProvider } from '@mantine/core';
-import { App } from './app/app';
+import '@mantine/notifications/styles.css';
+import '@mantine/core/styles.css';
+import '../src/_mantine.scss';
 
-const rootElement = document.getElementById('root');
+import { router } from '@/app/router';
 
-ReactDOM.createRoot(rootElement as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <MantineProvider>
-      <App />
+      <RouterProvider router={router} />
     </MantineProvider>
   </React.StrictMode>
 );
