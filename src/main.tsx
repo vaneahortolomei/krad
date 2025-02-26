@@ -7,11 +7,15 @@ import '@mantine/core/styles.css';
 import '../src/_mantine.scss';
 
 import { router } from '@/app/router';
+import { Provider } from 'react-redux';
+import { store } from '@/app/redux';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <MantineProvider>
-      <RouterProvider router={router} />
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
     </MantineProvider>
   </React.StrictMode>
 );
