@@ -8,12 +8,6 @@ img {
     max-width: 100%;
 }
 
-
-//$primary-color: #222027;
-//$text-color: #222027;
-//$third-color: #A4A4A4;
-//$fourth-color: #e4e4e499;
-
 body, html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -21,12 +15,13 @@ body, html {
 }
 
 body {
+    font-family: 'Poppins', sans-serif;
     font-style: normal;
     overflow: auto;
 }
 
 h1 {
-    font-weight: 400!important;
+    font-weight: 200!important;
     font-style: normal;
 }
 
@@ -34,6 +29,11 @@ p {
     line-height: 1.4!important;
 }
 
-* {
-    color: #222027;
+input {
+    color: #303030;
 }
+
+
+//* {
+//    color: #303030;
+//}
